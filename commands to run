@@ -1,0 +1,15 @@
+ Once done:
+Save changes in server.js
+
+Run:
+
+bash
+Copy code
+node server.js
+Check for this in console:
+
+arduino
+Copy code
+✅ Connected to MongoDB Atlas
+🚀 Server running at http://localhost:3000
+Then your register/login should work perfectly! Want me to help check or build the updated connection string for you?

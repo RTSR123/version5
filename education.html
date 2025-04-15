@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Filter - Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fdfcf9;
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #004085;
+      padding: 10px 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo-container img {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+    }
+    .nav-buttons a {
+      margin-left: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #0069d9;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .nav-buttons a:hover {
+      background-color: #0056b3;
+    }
+    .user-icon {
+      margin-left: 12px;
+      color: #ffffff;
+      font-size: 24px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .user-icon:hover {
+      color: #cccccc;
+    }
+
+    /* Filter page content styles */
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 16px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .progress {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background: #2e7d32;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    p.subtext {
+      margin: 0 0 24px;
+      color: #777;
+      font-size: 15px;
+    }
+
+    /* Education options styling */
+    .education-options {
+      display: flex;
+      justify-content: space-around;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .education-card {
+      flex: 1;
+      min-width: 150px;
+      background: #f5f5f5;
+      padding: 20px 12px;
+      border-radius: 14px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s ease;
+      text-align: center;
+    }
+
+    .education-card:hover {
+      background: #eef6f0;
+    }
+
+    .education-card.selected {
+      border-color: #2e7d32;
+      background: #e7f4ec;
+    }
+
+    .education-card span {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 12px 32px;
+      font-size: 16px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1b5e20;
+    }
+
+    .reset {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #888;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header from coverpage.html -->
+  <div class="header">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo">
+      <div class="logo">Scheme Navigator</div>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.html">Login</a>
+      <a href="registration.html">Register</a>
+      <i class="fa-solid fa-user-circle user-icon" title="User Profile"></i>
+    </div>
+  </div>
+
+  <!-- Filter page content -->
+  <div class="main">
+    <div class="card">
+      <div class="progress">
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+      </div>
+      <h2>Education</h2>
+
+      <div class="education-options">
+        <div class="education-card" onclick="selectEducation('high_school', this)">
+          <span>High School</span>
+        </div>
+        <div class="education-card" onclick="selectEducation('undergraduate', this)">
+          <span>Undergraduate</span>
+        </div>
+        <div class="education-card" onclick="selectEducation('postgraduate', this)">
+          <span>Postgraduate</span>
+        </div>
+        <div class="education-card" onclick="selectEducation('phd', this)">
+          <span>PhD</span>
+        </div>
+        <div class="education-card" onclick="selectEducation('diploma', this)">
+          <span>Diploma</span>
+        </div>
+        <div class="education-card" onclick="selectEducation('vocational', this)">
+          <span>Vocational</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" onclick="nextPage()">Next</button>
+        <div class="reset" onclick="resetSelection()">Reset Form</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedEducation = null;
+
+    function selectEducation(education, el) {
+      selectedEducation = education;
+      document.querySelectorAll('.education-card').forEach(card => card.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    function nextPage() {
+      if (!selectedEducation) {
+        alert("Please select an education level.");
+        return;
+      }
+      localStorage.setItem("education", selectedEducation);
+      window.location.href = "result.html";
+    }
+
+    function resetSelection() {
+      selectedEducation = null;
+      document.querySelectorAll('.education-card').forEach(card => card.classList.remove('selected'));
+    }
+  </script>
+
+</body>
+</html>

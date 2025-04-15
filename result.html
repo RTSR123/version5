@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Results</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      padding: 40px 30px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #000; /* black heading */
+    }
+
+    .filter-summary {
+      background: #e8f5e9;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: left;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #000; /* black for labels */
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .filter-summary p {
+      margin: 10px 0;
+    }
+
+    .filter-summary span {
+      color: #555; /* light black / gray for answers */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Filtered Results</h2>
+    <div class="filter-summary">
+      <p><strong>Gender:</strong> <span id="gender"></span></p>
+      <p><strong>Marital Status:</strong> <span id="maritalStatus"></span></p>
+      <p><strong>Disability:</strong> <span id="disability"></span></p>
+      <p><strong>Annual Income:</strong> <span id="income"></span></p>
+      <p><strong>Age:</strong> <span id="age"></span></p>
+      <p><strong>State:</strong> <span id="state"></span></p>
+      <p><strong>Area:</strong> <span id="area"></span></p>
+      <p><strong>Caste:</strong> <span id="caste"></span></p>
+      <p><strong>Education:</strong> <span id="education"></span></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("gender").textContent = localStorage.getItem("gender");
+    document.getElementById("maritalStatus").textContent = localStorage.getItem("maritalStatus");
+    document.getElementById("disability").textContent = localStorage.getItem("disability");
+    document.getElementById("income").textContent = localStorage.getItem("income");
+    document.getElementById("age").textContent = localStorage.getItem("age");
+    document.getElementById("state").textContent = localStorage.getItem("state");
+    document.getElementById("area").textContent = localStorage.getItem("area");
+    document.getElementById("caste").textContent = localStorage.getItem("caste");
+    document.getElementById("education").textContent = localStorage.getItem("education");
+  </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Filter - Residence</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fdfcf9;
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #004085;
+      padding: 10px 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo-container img {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+    }
+    .nav-buttons a {
+      margin-left: 12px;
+      text-decoration: none;
+      color: #ffffff;
+      background-color: #0069d9;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+    .nav-buttons a:hover {
+      background-color: #0056b3;
+    }
+    .user-icon {
+      margin-left: 12px;
+      color: #ffffff;
+      font-size: 24px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .user-icon:hover {
+      color: #cccccc;
+    }
+
+    /* Filter page content styles */
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 16px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .progress {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 30px;
+    }
+
+    .dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background: #2e7d32;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 15px;
+      color: #444;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .radio-card {
+      flex: 1;
+      min-width: 130px;
+      background: #f5f5f5;
+      padding: 16px 12px;
+      border-radius: 14px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .radio-card.selected {
+      border-color: #2e7d32;
+      background: #e7f4ec;
+    }
+
+    .actions {
+      text-align: center;
+      margin-top: 24px;
+    }
+
+    .btn {
+      padding: 12px 32px;
+      font-size: 16px;
+      background: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #1b5e20;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header from coverpage.html -->
+  <div class="header">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo">
+      <div class="logo">Scheme Navigator</div>
+    </div>
+    <div class="nav-buttons">
+      <a href="login.html">Login</a>
+      <a href="registration.html">Register</a>
+      <i class="fa-solid fa-user-circle user-icon" title="User Profile"></i>
+    </div>
+  </div>
+
+  <!-- Filter page content -->
+  <div class="main">
+    <div class="card">
+      <div class="progress">
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot active"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <h2>Your Place of Residence</h2>
+
+      <!-- State Dropdown -->
+      <div class="form-group">
+        <label for="state">Select your state:</label>
+        <select id="state" required>
+          <option value="">-- Select State --</option>
+          <option value="andhra_pradesh">Andhra Pradesh</option>
+          <option value="arunachal_pradesh">Arunachal Pradesh</option>
+          <option value="assam">Assam</option>
+          <option value="bihar">Bihar</option>
+          <option value="chhattisgarh">Chhattisgarh</option>
+          <option value="goa">Goa</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="haryana">Haryana</option>
+          <option value="himachal_pradesh">Himachal Pradesh</option>
+          <option value="jharkhand">Jharkhand</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="kerala">Kerala</option>
+          <option value="madhya_pradesh">Madhya Pradesh</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="manipur">Manipur</option>
+          <option value="meghalaya">Meghalaya</option>
+          <option value="mizoram">Mizoram</option>
+          <option value="nagaland">Nagaland</option>
+          <option value="odisha">Odisha</option>
+          <option value="punjab">Punjab</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="sikkim">Sikkim</option>
+          <option value="tamil_nadu">Tamil Nadu</option>
+          <option value="telangana">Telangana</option>
+          <option value="tripura">Tripura</option>
+          <option value="uttar_pradesh">Uttar Pradesh</option>
+          <option value="uttarakhand">Uttarakhand</option>
+          <option value="west_bengal">West Bengal</option>
+          <option value="andaman_nicobar">Andaman and Nicobar Islands</option>
+          <option value="chandigarh">Chandigarh</option>
+          <option value="dadra_nagar_haveli_daman_diu">Dadra & Nagar Haveli and Daman & Diu</option>
+          <option value="delhi">Delhi</option>
+          <option value="jammu_kashmir">Jammu and Kashmir</option>
+          <option value="ladakh">Ladakh</option>
+          <option value="lakshadweep">Lakshadweep</option>
+          <option value="puducherry">Puducherry</option>
+        </select>
+      </div>
+
+      <!-- Urban/Rural -->
+      <div class="form-group">
+        <label>Area of residence:</label>
+        <div class="radio-group">
+          <div class="radio-card" onclick="selectArea('urban', this)">Urban</div>
+          <div class="radio-card" onclick="selectArea('rural', this)">Rural</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" onclick="submitResidence()">Next</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedArea = null;
+
+    function selectArea(value, el) {
+      selectedArea = value;
+      document.querySelectorAll('.radio-card').forEach(card => card.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+
+    function submitResidence() {
+      const state = document.getElementById("state").value;
+
+      if (!state || !selectedArea) {
+        alert("Please select both your state and area of residence.");
+        return;
+      }
+
+      localStorage.setItem("state", state);
+      localStorage.setItem("area", selectedArea);
+
+      window.location.href = "caste.html";
+    }
+  </script>
+
+</body>
+</html>
