@@ -81,7 +81,7 @@
       if (result.success) {
         errorMessage.style.color = 'green';
         errorMessage.textContent = 'Login successful! Redirecting...';
-        setTimeout(() => window.location.href = '/result.html', 2000);
+        setTimeout(() => window.location.href = '/coverpage.html', 2000);
       } else if (result.error === 'User not found') {
         errorMessage.textContent = 'User not registered. Redirecting to registration page...';
         setTimeout(() => window.location.href = '/registration.html', 2000);
